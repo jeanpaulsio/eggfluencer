@@ -7,46 +7,102 @@
     <link href="https://cdn.jsdelivr.net/npm/daisyui@4.7.2/dist/full.min.css" rel="stylesheet" type="text/css" />
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #fbbf24;
+            --secondary: #1e293b;
+        }
+        body {
+            font-family: 'Montserrat', sans-serif;
+        }
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+        @keyframes slideIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .float {
+            animation: float 3s ease-in-out infinite;
+        }
+        .pulse {
+            animation: pulse 2s ease-in-out infinite;
+        }
+        .slide-in {
+            animation: slideIn 0.6s ease-out forwards;
+        }
+        .animate-on-scroll {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.6s ease-out;
+        }
+        .animate-on-scroll.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .btn {
+            font-weight: 600;
+            text-transform: none;
+            letter-spacing: 0.5px;
+        }
+        .egg-pattern {
+            background-color: #fff8e7;
+            background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23fbbf24' fill-opacity='0.2'%3E%3Ccircle cx='35' cy='50' r='18' /%3E%3Ccircle cx='65' cy='50' r='18' /%3E%3C/g%3E%3C/svg%3E");
+            background-size: 100px 100px;
+        }
+        .hero-gradient {
+            background: linear-gradient(rgba(255, 248, 231, 0.82), rgba(251, 191, 36, 0.18));
+        }
+    </style>
 </head>
-<body>
+<body class="bg-white">
     <!-- Hero Section -->
-    <div class="hero min-h-screen bg-gradient-to-b from-yellow-50 to-yellow-100">
-        <div class="hero-content text-center">
+    <div class="hero min-h-screen relative egg-pattern">
+        <div class="absolute inset-0 hero-gradient"></div>
+        <div class="hero-content text-center relative z-10">
             <div class="max-w-3xl">
-                <h1 class="text-5xl font-bold text-yellow-800 mb-8">🥚 Become an Eggfluencer</h1>
-                <p class="text-2xl mb-6 text-yellow-700">Master the Secret Art of Finding Double Yolks</p>
-                <p class="text-xl mb-8 text-yellow-600">Join 10,000+ egg enthusiasts who have cracked the code to breakfast success!</p>
-                <button class="btn btn-primary btn-lg bg-yellow-500 hover:bg-yellow-600 border-none text-white">
-                    GET INSTANT ACCESS - Only $97! 🔥
+                <h1 class="text-6xl font-extrabold text-slate-800 mb-8 slide-in tracking-tight drop-shadow-sm">🥚 Become an Eggfluencer</h1>
+                <p class="text-2xl mb-6 text-slate-700 font-semibold slide-in drop-shadow-sm" style="animation-delay: 0.2s">Master the Secret Art of Finding Double Yolks</p>
+                <p class="text-xl mb-12 text-slate-600 slide-in" style="animation-delay: 0.4s">Join 10,000+ egg enthusiasts who have cracked the code to breakfast success!</p>
+                <button class="btn btn-lg bg-slate-800 hover:bg-slate-900 text-amber-400 border-none float shadow-lg px-8">
+                    <a href="https://account.venmo.com/u/hellojp" target="_blank" rel="noopener noreferrer">
+                        GET INSTANT ACCESS - Only $97! 🔥
+                    </a>
                 </button>
             </div>
         </div>
     </div>
 
     <!-- Features Section -->
-    <div class="py-20 bg-white">
+    <div class="py-24 bg-white">
         <div class="container mx-auto px-4">
-            <h2 class="text-4xl font-bold text-center mb-16 text-yellow-800">What You'll Learn 📚</h2>
+            <h2 class="text-4xl font-bold text-center mb-16 text-slate-800">What You'll Learn 📚</h2>
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <div class="card bg-base-100 shadow-xl">
-                    <div class="card-body items-center text-center">
-                        <i class="fas fa-egg text-4xl text-yellow-500 mb-4"></i>
-                        <h3 class="card-title">The Double Yolk Formula</h3>
-                        <p>Learn my proprietary "Shell Signal System" to spot double yolks with 78% accuracy!</p>
+                <div class="card bg-gradient-to-br from-amber-50 to-amber-100 shadow-xl animate-on-scroll hover:shadow-2xl transition-all duration-300">
+                    <div class="card-body items-center text-center p-8">
+                        <span class="text-6xl mb-6">🎯</span>
+                        <h3 class="card-title text-xl font-bold text-slate-800 mb-4">The Double Yolk Formula</h3>
+                        <p class="text-slate-600">Learn my proprietary "Shell Signal System" to spot double yolks with 78% accuracy!</p>
                     </div>
                 </div>
-                <div class="card bg-base-100 shadow-xl">
-                    <div class="card-body items-center text-center">
-                        <i class="fas fa-store text-4xl text-yellow-500 mb-4"></i>
-                        <h3 class="card-title">Store Secrets</h3>
-                        <p>Discover which grocery stores have the highest double yolk rates (you'll be shocked!)</p>
+                <div class="card bg-gradient-to-br from-amber-50 to-amber-100 shadow-xl animate-on-scroll hover:shadow-2xl transition-all duration-300">
+                    <div class="card-body items-center text-center p-8">
+                        <span class="text-6xl mb-6">🏪</span>
+                        <h3 class="card-title text-xl font-bold text-slate-800 mb-4">Store Secrets</h3>
+                        <p class="text-slate-600">Discover which grocery stores have the highest double yolk rates (you'll be shocked!)</p>
                     </div>
                 </div>
-                <div class="card bg-base-100 shadow-xl">
-                    <div class="card-body items-center text-center">
-                        <i class="fas fa-chart-line text-4xl text-yellow-500 mb-4"></i>
-                        <h3 class="card-title">Egg-conomics</h3>
-                        <p>Calculate your ROI (Return on Eggs) with our exclusive Yolk Yield Calculator</p>
+                <div class="card bg-gradient-to-br from-amber-50 to-amber-100 shadow-xl animate-on-scroll hover:shadow-2xl transition-all duration-300">
+                    <div class="card-body items-center text-center p-8">
+                        <span class="text-6xl mb-6">📈</span>
+                        <h3 class="card-title text-xl font-bold text-slate-800 mb-4">Egg-conomics</h3>
+                        <p class="text-slate-600">Calculate your ROI (Return on Eggs) with our exclusive Yolk Yield Calculator</p>
                     </div>
                 </div>
             </div>
@@ -54,40 +110,40 @@
     </div>
 
     <!-- Testimonials -->
-    <div class="py-20 bg-yellow-50">
+    <div class="py-24 bg-slate-50">
         <div class="container mx-auto px-4">
-            <h2 class="text-4xl font-bold text-center mb-16 text-yellow-800">Success Stories 🌟</h2>
+            <h2 class="text-4xl font-bold text-center mb-16 text-slate-800">Success Stories 🌟</h2>
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                <div class="card bg-base-100 shadow-xl">
-                    <div class="card-body">
-                        <div class="flex items-center mb-4">
+                <div class="card bg-white shadow-xl animate-on-scroll hover:shadow-2xl transition-all duration-300">
+                    <div class="card-body p-8">
+                        <div class="flex items-center mb-6">
                             <div class="avatar">
-                                <div class="w-12 h-12 rounded-full bg-yellow-200 flex items-center justify-center">
-                                    <span class="text-xl">🍳</span>
+                                <div class="w-20 h-20 rounded-full bg-amber-200 flex items-center justify-center">
+                                    <span class="text-6xl">🍳</span>
                                 </div>
                             </div>
-                            <div class="ml-4">
-                                <h3 class="font-bold">Sarah J.</h3>
-                                <p class="text-yellow-600">Professional Breakfast Enthusiast</p>
+                            <div class="ml-6">
+                                <h3 class="font-bold text-2xl text-slate-800">Shell E. Overton</h3>
+                                <p class="text-amber-600 font-medium">Professional Breakfast Enthusiast</p>
                             </div>
                         </div>
-                        <p>"Before this course, I was just another egg buyer. Now I'm known as the Double Yolk Queen in my neighborhood!"</p>
+                        <p class="text-slate-600 text-lg">"Before this course, I was just another egg buyer. Now I'm known as the Double Yolk Queen in my neighborhood!"</p>
                     </div>
                 </div>
-                <div class="card bg-base-100 shadow-xl">
-                    <div class="card-body">
-                        <div class="flex items-center mb-4">
+                <div class="card bg-white shadow-xl animate-on-scroll hover:shadow-2xl transition-all duration-300">
+                    <div class="card-body p-8">
+                        <div class="flex items-center mb-6">
                             <div class="avatar">
-                                <div class="w-12 h-12 rounded-full bg-yellow-200 flex items-center justify-center">
-                                    <span class="text-xl">🥚</span>
+                                <div class="w-20 h-20 rounded-full bg-amber-200 flex items-center justify-center">
+                                    <span class="text-6xl">🍳</span>
                                 </div>
                             </div>
-                            <div class="ml-4">
-                                <h3 class="font-bold">Mike T.</h3>
-                                <p class="text-yellow-600">Certified Eggfluencer</p>
+                            <div class="ml-6">
+                                <h3 class="font-bold text-2xl text-slate-800">Yolk O. Ono</h3>
+                                <p class="text-amber-600 font-medium">Certified Eggfluencer</p>
                             </div>
                         </div>
-                        <p>"I've saved thousands on protein supplements thanks to my newfound double yolk detection skills!"</p>
+                        <p class="text-slate-600 text-lg">"I've saved thousands on protein supplements thanks to my newfound double yolk detection skills!"</p>
                     </div>
                 </div>
             </div>
@@ -95,43 +151,60 @@
     </div>
 
     <!-- CTA Section -->
-    <div class="py-20 bg-gradient-to-t from-yellow-50 to-yellow-100">
+    <div class="py-24 bg-gradient-to-b from-amber-50 to-amber-100">
         <div class="container mx-auto px-4 text-center">
-            <h2 class="text-4xl font-bold mb-8 text-yellow-800">Ready to Transform Your Egg Game? 🚀</h2>
-            <div class="stats shadow mb-8">
+            <h2 class="text-4xl font-bold mb-12 text-slate-800">Ready to Transform Your Egg Game? 🚀</h2>
+            <div class="stats shadow-xl mb-12 animate-on-scroll bg-white">
                 <div class="stat">
-                    <div class="stat-title">Success Rate</div>
-                    <div class="stat-value text-yellow-500">78%</div>
-                    <div class="stat-desc">Double yolk detection</div>
+                    <div class="stat-title font-semibold text-slate-600">Success Rate</div>
+                    <div class="stat-value text-amber-500">78%</div>
+                    <div class="stat-desc text-slate-500">Double yolk detection</div>
                 </div>
                 <div class="stat">
-                    <div class="stat-title">Students</div>
-                    <div class="stat-value text-yellow-500">10,000+</div>
-                    <div class="stat-desc">And growing!</div>
+                    <div class="stat-title font-semibold text-slate-600">Students</div>
+                    <div class="stat-value text-amber-500">10,000+</div>
+                    <div class="stat-desc text-slate-500">And growing!</div>
                 </div>
                 <div class="stat">
-                    <div class="stat-title">Satisfaction</div>
-                    <div class="stat-value text-yellow-500">99%</div>
-                    <div class="stat-desc">Or your money back</div>
+                    <div class="stat-title font-semibold text-slate-600">Satisfaction</div>
+                    <div class="stat-value text-amber-500">99%</div>
+                    <div class="stat-desc text-slate-500">Or your money back</div>
                 </div>
             </div>
-            <div class="card max-w-2xl mx-auto bg-base-100 shadow-xl">
-                <div class="card-body">
-                    <h3 class="card-title text-2xl justify-center mb-4">🔥 Limited Time Offer 🔥</h3>
-                    <div class="text-left mb-6">
-                        <ul class="space-y-2">
-                            <li class="flex items-center"><i class="fas fa-check text-green-500 mr-2"></i> Complete Double Yolk Detection Course ($497 value)</li>
-                            <li class="flex items-center"><i class="fas fa-check text-green-500 mr-2"></i> Exclusive Egg Shopping Cheat Sheet ($97 value)</li>
-                            <li class="flex items-center"><i class="fas fa-check text-green-500 mr-2"></i> Private Eggfluencer Community Access ($197 value)</li>
-                            <li class="flex items-center"><i class="fas fa-check text-green-500 mr-2"></i> BONUS: "Egg-cellent Photography" Mini-Course ($147 value)</li>
+            <div class="card max-w-2xl mx-auto bg-white shadow-2xl animate-on-scroll">
+                <div class="card-body p-12">
+                    <h3 class="text-3xl font-bold mb-8 text-slate-800">🔥 Limited Time Offer 🔥</h3>
+                    <div class="text-left mb-8">
+                        <ul class="space-y-4">
+                            <li class="flex items-center text-lg">
+                                <i class="fas fa-check-circle text-amber-500 mr-4"></i>
+                                <span class="text-slate-700">Complete Double Yolk Detection Course <span class="font-semibold text-amber-600">($497 value)</span></span>
+                            </li>
+                            <li class="flex items-center text-lg">
+                                <i class="fas fa-check-circle text-amber-500 mr-4"></i>
+                                <span class="text-slate-700">Exclusive Egg Shopping Cheat Sheet <span class="font-semibold text-amber-600">($97 value)</span></span>
+                            </li>
+                            <li class="flex items-center text-lg">
+                                <i class="fas fa-check-circle text-amber-500 mr-4"></i>
+                                <span class="text-slate-700">Private Eggfluencer Community Access <span class="font-semibold text-amber-600">($197 value)</span></span>
+                            </li>
+                            <li class="flex items-center text-lg">
+                                <i class="fas fa-check-circle text-amber-500 mr-4"></i>
+                                <span class="text-slate-700">BONUS: "Egg-cellent Photography" Mini-Course <span class="font-semibold text-amber-600">($147 value)</span></span>
+                            </li>
                         </ul>
                     </div>
                     <div class="text-center">
-                        <p class="text-2xl mb-4"><s class="text-gray-400">$938</s> <span class="text-3xl font-bold text-yellow-600">$97</span></p>
-                        <button class="btn btn-primary btn-lg bg-yellow-500 hover:bg-yellow-600 border-none text-white">
-                            START YOUR EGG JOURNEY TODAY!
+                        <p class="text-3xl mb-8">
+                            <s class="text-slate-400">$938</s> 
+                            <span class="text-4xl font-extrabold text-amber-500 ml-4">$97</span>
+                        </p>
+                        <button class="btn btn-lg bg-slate-800 hover:bg-slate-900 text-amber-400 border-none pulse shadow-lg px-12">
+                            <a href="https://account.venmo.com/u/hellojp" target="_blank" rel="noopener noreferrer">
+                                START YOUR EGG JOURNEY TODAY!
+                            </a>
                         </button>
-                        <p class="mt-4 text-sm text-gray-600">30-Day "No-Questions-Asked" Money Back Guarantee 🛡️</p>
+                        <p class="mt-6 text-slate-600">30-Day "No-Questions-Asked" Money Back Guarantee 🛡️</p>
                     </div>
                 </div>
             </div>
@@ -139,13 +212,26 @@
     </div>
 
     <!-- Footer -->
-    <footer class="footer footer-center p-10 bg-yellow-800 text-white">
+    <footer class="footer footer-center p-16 bg-slate-900 text-white">
         <div>
-            <p class="font-bold text-xl">🥚 Eggfluencer Academy</p>
-            <p>Cracking success since 2024</p>
-            <p>© 2024 Eggfluencer. All rights reserved.</p>
-            <p class="text-xs mt-4">*Results may vary. Double yolks not guaranteed. But hey, at least you'll have fun trying!</p>
+            <p class="font-bold text-2xl mb-2">🥚 Eggfluencer Academy</p>
+            <p class="font-light">Cracking success since 2025</p>
+            <p class="mt-8">© 2025 Eggfluencer. All rights reserved.</p>
+            <p class="text-sm mt-4 text-amber-200">*Results may vary. Double yolks not guaranteed. But hey, at least you'll have fun trying!</p>
         </div>
     </footer>
+
+    <script>
+        // Intersection Observer for scroll animations
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('.animate-on-scroll').forEach((el) => observer.observe(el));
+    </script>
 </body>
 </html>
